@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  & form {
+    width: 40%;
+
+    & .title {
+      text-align: center;
+    }
+
+    & .inputs {
+      display: flex;
+      justify-content: space-between;
+
+      &--row {
+
+      }
+
+      &--column {
+        flex-direction: column;
+      }
+    }
+    & .radio-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin: 30px 0;
+      & mat-radio-group {
+        width: 42%;
+        display: flex;
+        flex-direction: column;
+        & .radio-label {
+          font-family: 'Roboto', sans-serif;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 14px;
+          color: #3A4BA6;
+          margin-bottom: 12px;
+        }
+        & .radio-wrapper {
+          & mat-radio-button {
+            margin-right: 40px;
+
+            &::ng-deep .mat-radio-outer-circle {
+              border-color: #3A4BA6;
+            }
+
+            &::ng-deep .mat-radio-inner-circle {
+              background-color: #3A4BA6;
+            }
+          }
+        }
+      }
+    }
+  }
+}

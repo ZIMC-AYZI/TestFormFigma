@@ -1,0 +1,58 @@
+<div class="form-wrapper">
+  <form>
+    <div class="title">
+      <h1>TITLE</h1>
+    </div>
+    <div class="inputs inputs--row">
+      <app-my-input
+        ngDefaultControl
+        [value]="firstInput.value"
+        [error]="true"
+        [errorMessage]="errorMessage"
+        [formControl]="firstInput"></app-my-input>
+      <app-my-input
+        ngDefaultControl
+        [value]="secondInput.value"
+        [error]="true"
+        [errorMessage]="errorMessage"
+        [formControl]="secondInput"></app-my-input>
+    </div>
+    <div class="radio-buttons">
+      <mat-radio-group aria-label="Select an option">
+        <span class="radio-label">Experience with Angular 10-11</span>
+        <div class="radio-wrapper">
+          <mat-radio-button value="1">No</mat-radio-button>
+          <mat-radio-button value="2">Yes</mat-radio-button>
+        </div>
+      </mat-radio-group>
+      <mat-radio-group aria-label="Select an option">
+        <span class="radio-label">Estimate for the task - 4h</span>
+        <div class="radio-wrapper">
+          <mat-radio-button value="1">No</mat-radio-button>
+          <mat-radio-button value="2">Yes</mat-radio-button>
+        </div>
+      </mat-radio-group>
+    </div>
+    <div class="inputs inputs--column">
+      <app-my-input
+        ngDefaultControl
+        [value]="thirdInput.value"
+        [error]="true"
+        [errorMessage]="errorMessage"
+        [formControl]="thirdInput"></app-my-input>
+      <app-my-input
+        ngDefaultControl
+        [value]="fourthInput.value"
+        [error]="true"
+        [errorMessage]="errorMessage"
+        [formControl]="fourthInput"></app-my-input>
+      <app-my-input
+        ngDefaultControl
+        [value]="fivesInput.value"
+        [error]="fivesInput.touched && !fivesInput.value"
+        [errorMessage]="errorMessage"
+        [formControl]="fivesInput"></app-my-input>
+    </div>
+    <button type="submit" class="btn btn-primary">Next</button>
+  </form>
+</div>
