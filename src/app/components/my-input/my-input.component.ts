@@ -8,7 +8,7 @@ import { FormControl } from '@angular/forms';
 })
 export class MyInputComponent implements OnInit {
   @Input() value: string;
-  @Input() disabled: boolean;
+  @Input() isDisabled: boolean;
   @Input() error: boolean;
   @Input() errorMessage: string;
   @Input() formControl = new FormControl()

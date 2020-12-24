@@ -7,52 +7,42 @@
       <app-my-input
         ngDefaultControl
         [value]="firstInput.value"
-        [error]="true"
+        [error]="!!firstInput.errors.notValid"
         [errorMessage]="errorMessage"
         [formControl]="firstInput"></app-my-input>
       <app-my-input
         ngDefaultControl
         [value]="secondInput.value"
-        [error]="true"
-        [errorMessage]="errorMessage"
         [formControl]="secondInput"></app-my-input>
     </div>
     <div class="radio-buttons">
-      <mat-radio-group aria-label="Select an option">
-        <span class="radio-label">Experience with Angular 10-11</span>
-        <div class="radio-wrapper">
-          <mat-radio-button value="1">No</mat-radio-button>
-          <mat-radio-button value="2">Yes</mat-radio-button>
-        </div>
-      </mat-radio-group>
-      <mat-radio-group aria-label="Select an option">
-        <span class="radio-label">Estimate for the task - 4h</span>
-        <div class="radio-wrapper">
-          <mat-radio-button value="1">No</mat-radio-button>
-          <mat-radio-button value="2">Yes</mat-radio-button>
-        </div>
-      </mat-radio-group>
+      <app-my-radio-btn class="disabled-text" [disabled]="disabled"></app-my-radio-btn>
+      <app-my-radio-btn [disabled]="disabled"></app-my-radio-btn>
     </div>
     <div class="inputs inputs--column">
       <app-my-input
         ngDefaultControl
         [value]="thirdInput.value"
-        [error]="true"
+        [error]="!!thirdInput.errors.notValid"
         [errorMessage]="errorMessage"
         [formControl]="thirdInput"></app-my-input>
       <app-my-input
         ngDefaultControl
         [value]="fourthInput.value"
-        [error]="true"
+        [error]="!!fourthInput.errors.notValid"
         [errorMessage]="errorMessage"
         [formControl]="fourthInput"></app-my-input>
       <app-my-input
         ngDefaultControl
         [value]="fivesInput.value"
-        [error]="fivesInput.touched && !fivesInput.value"
+        [error]="!!fivesInput.errors.notValid"
         [errorMessage]="errorMessage"
         [formControl]="fivesInput"></app-my-input>
     </div>
-    <button type="submit" class="btn btn-primary">Next</button>
+    <button class="submit-form"
+            mat-raised-button
+            color="primary"
+            (click)="submitForm()"
+    >Next</button>
   </form>
 </div>

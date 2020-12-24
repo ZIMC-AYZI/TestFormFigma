@@ -11,12 +11,14 @@ import { MyFormComponent } from './components/my-form/my-form.component';
 import { MyInputComponent } from './components/my-input/my-input.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
+import { MyRadioBtnComponent } from './components/my-radio-btn/my-radio-btn.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyFormComponent,
     MyInputComponent,
+    MyRadioBtnComponent,
   ],
   imports: [
     BrowserModule,
