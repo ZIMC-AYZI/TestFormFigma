@@ -1,13 +1,13 @@
 <div class="form-wrapper">
   <form>
     <div class="title">
-      <h1>TITLE</h1>
+      <h1>FORM TITLE</h1>
     </div>
     <div class="inputs inputs--row">
       <app-my-input
         ngDefaultControl
         [value]="firstInput.value"
-        [error]="!!firstInput.errors.notValid"
+        [error]="!!firstInput.errors"
         [errorMessage]="errorMessage"
         [formControl]="firstInput"></app-my-input>
       <app-my-input
@@ -23,19 +23,19 @@
       <app-my-input
         ngDefaultControl
         [value]="thirdInput.value"
-        [error]="!!thirdInput.errors.notValid"
+        [error]="!!thirdInput.errors"
         [errorMessage]="errorMessage"
         [formControl]="thirdInput"></app-my-input>
       <app-my-input
         ngDefaultControl
         [value]="fourthInput.value"
-        [error]="!!fourthInput.errors.notValid"
+        [error]="!!fourthInput.errors"
         [errorMessage]="errorMessage"
         [formControl]="fourthInput"></app-my-input>
       <app-my-input
         ngDefaultControl
         [value]="fivesInput.value"
-        [error]="!!fivesInput.errors.notValid"
+        [error]="!!fivesInput.errors"
         [errorMessage]="errorMessage"
         [formControl]="fivesInput"></app-my-input>
     </div>

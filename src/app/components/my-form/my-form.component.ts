@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Form, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-my-form',
@@ -22,16 +22,12 @@ export class MyFormComponent implements OnInit {
 
 
   ngOnInit(): void  {
-    this.initForm()
-    Object.keys(this.currentForm.controls).forEach((el) => {
-      this.currentForm.controls[el].setErrors({notValid : false})
-    });
-    console.log(this.currentForm.controls)
+    this.initForm();
   }
   public initForm(): void {
     this.firstInput = new FormControl('');
 
-    this.secondInput = new FormControl({value: '', disabled: true });
+    this.secondInput = new FormControl({ value: '', disabled: true });
 
     this.thirdInput = new FormControl('');
 
@@ -39,20 +35,20 @@ export class MyFormComponent implements OnInit {
 
     this.fivesInput = new FormControl( '');
 
-    this.currentForm.addControl('first-control', this.firstInput);
-    this.currentForm.addControl('second-control', this.secondInput);
-    this.currentForm.addControl('third-control', this.thirdInput);
-    this.currentForm.addControl('fourth-control', this.fourthInput);
-    this.currentForm.addControl('fives-control', this.fivesInput);
+    this.currentForm.addControl('firstControl', this.firstInput);
+    this.currentForm.addControl('secondControl', this.secondInput);
+    this.currentForm.addControl('thirdControl', this.thirdInput);
+    this.currentForm.addControl('fourthControl', this.fourthInput);
+    this.currentForm.addControl('fivesControl', this.fivesInput);
   }
 
-  public submitForm():void {
+  public submitForm(): void {
     Object.keys(this.currentForm.controls).forEach((el) => {
       if (!this.currentForm.controls[el].value) {
-        this.currentForm.controls[el].setErrors({notValid : true})
+        this.currentForm.controls[el].setErrors({notValid : true});
       } else {
-        this.currentForm.controls[el].setErrors({notValid : false})
+        this.currentForm.controls[el].setErrors(null);
       }
-    })
+    });
   }
 }

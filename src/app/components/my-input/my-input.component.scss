@@ -1,34 +1,40 @@
+@import "src/assets/styles/shared-styles/vars";
+@import "src/assets/styles/shared-styles/mixins";
+
+
 ::ng-deep mat-form-field {
   width: 100%;
   &.error {
-    & .mat-form-field-wrapper{
+    & .mat-form-field-wrapper {
       & .mat-form-field-flex {
-        border: 2px solid #B21001 !important;
-        border-radius: 5px;
+        @include border-base(2px, solid, $error, 5px);
+      }
+    }
+    &.mat-focused {
+      & .mat-form-field-wrapper {
+        & .mat-form-field-flex {
+          @include border-base(2px, solid, $error, 5px);
+        }
       }
     }
   }
   & mat-label {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
+    @include font-base(18px, 400, 22px);
   }
   & input {
+    @include font-base(16px, 400, 18px);
+
     padding: 3px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 18px;
   }
   & .mat-form-field-flex {
-    border: 2px solid #c9cccd;
-    border-radius: 5px !important;
-    background: #ffffff !important;
+    @include border-base(2px, solid, $secondary, 5px);
+
+    background: $white !important;
   }
   &.mat-focused {
     & .mat-form-field-wrapper{
       & .mat-form-field-flex {
-        border: 2px solid #3A4BA6 !important;
-        border-radius: 5px;
+        @include border-base(2px, solid, $primary, 5px);
       }
     }
   }
@@ -37,10 +43,10 @@
   }
   &.mat-form-field-disabled {
     & mat-label {
-      color: #263238;
+      color: $default;
     }
     & .mat-form-field-flex {
-      background: rgba(56, 38, 48, 0.05) !important;
+      background: $default-opacity !important;
     }
   }
 }
