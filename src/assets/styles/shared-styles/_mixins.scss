@@ -1,0 +1,23 @@
+$font-family-base: 'Roboto', sans-serif;
+$font-size-base: 14px;
+$line-height-base: 1.4;
+
+@mixin font-base(
+  $size: $font-size-base,
+  $font-weight: 400,
+  $height: $line-height-base,
+  $font-style: normal,
+  $font-family: $font-family-base
+) {
+  font: $font-weight $font-style #{$size}/#{$height $font-family};
+}
+
+@mixin border-base(
+  $width,
+  $style: solid,
+  $color,
+  $radius: 0
+) {
+  border: $width $style $color !important;
+  border-radius: $radius !important;
+}
