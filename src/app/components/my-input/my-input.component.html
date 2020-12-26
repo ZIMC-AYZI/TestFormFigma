@@ -6,7 +6,7 @@
          [formControl]="formControl"
   >
   <mat-error *ngIf="error">{{ errorMessage }}</mat-error>
-  <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+  <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="resetValue()">
     <mat-icon>close</mat-icon>
   </button>
 </mat-form-field>
